@@ -46,7 +46,10 @@ public class Middleware extends HttpServlet {
 		
 		if(request.getParameter("action").equals("continue")) // Middleware is done, continue checkout
 		{
-			poManager.setSpaceInUse(false);
+			if (poManager!=null)
+			{
+				poManager.setSpaceInUse(false);
+			}
 		}
 		
 	}
