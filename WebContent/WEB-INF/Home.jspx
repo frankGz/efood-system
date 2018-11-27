@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=UTF-8" 
+		pageEncoding="UTF-8" session="true"/>
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsp/jstl/fmt" xmlns:func="http://java.sun.com/jsp/jstl/functions">
+<head>
+  <meta charset="UTF-8"/>
+  <title> Food R Us - Home </title>
+<link rel="stylesheet" type="text/css" href="main.css" title="style" />
+
+</head>
+<body>
+  <div>
+    <div class="redborder">
+      <div class="links">
+      	
+      
+        <c:if test="${not empty sessionScope.user}">
+      		Welcome! ${sessionScope.user.name} |
+      	</c:if>
+      	
+      	<c:if test="${empty sessionScope.user}">
+        <a href="Login">Login</a> |
+        </c:if>
+        
+        <a href="Cart">Cart</a>
+        
+        <c:if test="${not empty sessionScope.user}">
+        | <a href="Logout">Logout</a>
+        </c:if>
+
+      </div>
+      <h1> Welcome to Foods R Us </h1>
+      <h2 class="orangeborder"> Good things to eat and where to find them </h2>
+    </div>
+
+    <div class="regular">
+      <h2>Search for a food. (Or select a category below)</h2>
+        <p>
+          <form style="text-align:center;" action="Catalog" method="get">
+            <input type="text" name="search" width="200px"/>
+            ${" "}
+            <button type="submit">Search</button>
+            ${" "}
+            <a href="Catalog?all"><button type="button">Find All</button></a>
+          </form>
+        </p>
+
+
+    </div>
+	
+	<c:if test="${(not empty categorys) and (func:length(categorys) gt 0)}">
+	<c:forEach items="${categorys}" var="c"> 
+    <div class="regular">
+      <h2><span class="date">ID ${c.id}:</span> ${c.name} </h2>
+        <p>
+          ${c.description}
+        </p>
+      
+          <img src="ImageServlet/${c.id}" height="100" alt="food picture"/>
+      
+      <p style="padding:25px;">
+        <a href="Catalog?categoryID=${c.id}&amp;categoryName=${c.name}"><button>Browse this category</button></a>
+      </p>
+    </div>
+    </c:forEach>
+	</c:if>
+  </div>
+</body>
+</html>
+</jsp:root>

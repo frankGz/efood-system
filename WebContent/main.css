@@ -1,0 +1,72 @@
+body > div{
+  width:750px;
+  border: 15px solid white;
+  background-color:white;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+.redborder{
+  border: 15px solid rgb(220,190,83);
+  text-align:right;
+  background-color: rgb(245,118,34);
+  padding: 5px;
+  height: 130px;
+}
+
+
+.orangeborder{
+  /*border: 5px solid white;*/
+}
+/*
+p{
+  border: thin solid black;
+}
+*/
+.date{
+  /*border: 5px solid purple;*/
+  border-bottom-style: dashed;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+
+}
+
+.regular{
+
+  border: 5px solid rgb(253,220,84);
+  background-color: rgb(251,237,83);
+  padding: 5px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.Author{
+  /*border: 5px solid yellow;*/
+  text-align:center;
+}
+body{
+  background-image: url("images/background.jpg");
+
+  opacity: 0.95;
+}
+
+img{
+  float:right;
+}
+
+.links{
+  margin-left: 5px;
+  float: left;
+}
+
+.links > a:link, .links > a:visited, .links > a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.regular > div{
+  float: left;
+}
+
+
+

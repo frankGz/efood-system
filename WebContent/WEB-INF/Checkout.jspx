@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=UTF-8" 
+		pageEncoding="UTF-8" session="true"/>
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsp/jstl/fmt" xmlns:func="http://java.sun.com/jsp/jstl/functions">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title> Food R Us - Home </title>
+  <link rel="stylesheet" type="text/css" href="main.css" title="style" />  
+  
+</head>
+<body>
+
+  	<div>
+    <div class="redborder">
+      <div class="links">
+        <c:if test="${not empty sessionScope.user}">
+      		Welcome! ${sessionScope.user.name} |
+      	</c:if>
+      	
+      	<c:if test="${empty sessionScope.user}">
+        <a href="Login">Login</a> |
+        </c:if>
+        
+        <a href="Cart">Cart</a> |
+        
+        <c:if test="${not empty sessionScope.user}">
+        <a href="Logout">Logout</a> | 
+        </c:if>
+		<a href="Home">Home</a> |
+		<a href="Catalog">Catalog</a>
+      </div>
+      <h1> Welcome to Foods R Us </h1>
+      <h2 class="orangeborder"> Good things to eat and where to find them </h2>
+    </div>
+
+     <div class="regular" style="text-align:center">
+      <h4>You order has been placed! </h4>
+
+      <p style="margin:0 auto">
+        <span>Please wait until we process your order </span><br/>
+        <span>You can use the link below to check your order. </span><br/>
+        <span>${url}</span><br/>
+
+      </p>
+
+
+      </div>
+
+    </div>
+	
+	
+
+</body>
+
+</html>
+</jsp:root>

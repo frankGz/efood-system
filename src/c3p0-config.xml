@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+
+  <named-config name="efood"> 
+    
+    <property name="user">student</property>
+    <property name="password">secret</property>
+    <property name="driverClass">org.apache.derby.jdbc.ClientDriver</property>
+
+     <property name="jdbcUrl">jdbc:derby://localhost:64413/EECS</property>
+    <property name="acquireIncrement">5</property>
+    <property name="initialPoolSize">10</property>
+    <property name="minPoolSize">10</property>
+    <property name="maxPoolSize">100</property>
+
+    <property name="maxStatements">20</property> 
+    <property name="maxStatementsPerConnection">5</property>
+    <property name="testConnectionOnCheckout">true</property>
+    
+  </named-config>
+</c3p0-config>
+	
